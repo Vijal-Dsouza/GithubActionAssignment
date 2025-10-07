@@ -1,0 +1,28 @@
+name: push pipeline
+on:
+  push:
+    branches: [ main ]   # Runs when code is pushed to the 'main' branch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+              # Step 6: Notify about build status (using GitHub's built-in checks)
+      - name: Notify build status
+        if: ${{ success() }}
+        run: echo "Build succeeded!"
+
+      - name: Notify build failure
+        if: ${{ failure() }}
+        run: echo "Build failed!"
+

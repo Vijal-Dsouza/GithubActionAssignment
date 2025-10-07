@@ -1,7 +1,7 @@
 name: push pipeline
 on:
   push:
-    branches: [ main ]   # Runs when code is pushed to the 'main' branch
+    branches: [ master ]   # Runs when code is pushed to the 'main' branch
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,7 +17,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-              # Step 6: Notify about build status (using GitHub's built-in checks)
       - name: Notify build status
         if: ${{ success() }}
         run: echo "Build succeeded!"

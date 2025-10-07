@@ -1,8 +1,23 @@
-# Node.js CI using Github Actions
+# Node.js CI Pipeline with GitHub Actions
 
-A simple Node.js application integrated with GitHub Actions to automate build and test workflows.  
-The project demonstrates the use of CI pipelines for automating routine development tasks such as installing dependencies, running tests, and verifying code quality.
+This project contains a simple **Node.js application** integrated with a **GitHub Actions CI pipeline** to automate the build, linting, and testing process.
 
 
-Tech Stack: Node.js, GitHub Actions  
-Purpose: Automate and streamline the development workflow using CI/CD principles.
+## GitHub Actions Workflow
+
+The workflow (`.github/workflows/main.yml`) is configured to:
+- Run automatically on pushes and pull requests to the `master` branch.
+- Set up the Node.js environment (v20).
+- Install dependencies, run lint checks, and execute tests.
+- Provide build status notifications within GitHub.
+
+## How to Contribute
+
+Developers contributing to this project should:
+1. Clone the repository and create a new branch for changes.
+2. Ensure the Node.js environment is installed locally.
+3. Run tests and linting before committing:
+   ```bash
+   npm install
+   npm run lint
+   npm test

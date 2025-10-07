@@ -6,8 +6,8 @@ This project contains a simple **Node.js application** integrated with a **GitHu
 ## GitHub Actions Workflow
 
 The workflow (`.github/workflows/main.yml`) is configured to:
-- Run automatically on pushes and pull requests to the `master` branch.
-- Set up the Node.js environment (v20).
+- Run automatically on push requests to the `master` branch.
+- Set up the Node.js environment.
 - Install dependencies, run lint checks, and execute tests.
 - Provide build status notifications within GitHub.
 
